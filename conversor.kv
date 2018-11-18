@@ -1,0 +1,71 @@
+<CustButton@Button>:
+    font_size: 5
+
+<Calcular@GridLayout>:
+    id: calculador
+    rows:15
+    padding:70
+    spacing:10
+
+    canvas.before:
+        Color:
+            rgba: 5., .6, .2, 1.
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        Image:
+            source:'dolar.jpg'
+            size_hint_y:1.2
+            allow_stretch:True
+
+    Label:
+        text:'Conversor de Moedas'
+        font_size: 50
+        underline: 'True'
+        outline_width: 4
+    Label:
+        text:'Dólar $'
+        font_name:'Roboto-BoldItalic'
+        font_size: 15
+    TextInput:
+        id:entry2
+        font_size:63
+        multiline: False
+        #padding: 9
+        size_hint: [1.,.7]
+        pos_hint: {'x' : .9}
+    Button:
+        id:botao
+        text:'Converter'
+        size_hint: [1.,.7]
+        pos_hint: {'x' : .9}
+        on_press: root.converter()
+
+    Label:
+        text:'Valor em Real'
+        id:lbl
+        halign:  'left'
+        font_size: '30sp'
+        color:  [2,1,1,1]
+        font_name: 'DejaVuSans'
+        underline: 'True'
+        outline_width: 2
+        outline_color: [0, 0, 0]
+        font_blended: True
+        font_hinting:  'mono'
+        font_kerning:  True
+    Button:
+        text:'limpar'
+        size_hint: [1.,.7]
+        pos_hint: {'x' : .9}
+        on_press:root.lbl()
+
+
+
+
+
+
+
+
+
